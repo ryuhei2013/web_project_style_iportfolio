@@ -1,0 +1,12 @@
+{% extends "polls/base.html" %}
+
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">PollsアプリのTopicsを入力表示と管理できます</h1>
+
+    <p class="lead">各ユーザのTopicのコメントを表示して、管理するウェッブアプリ</p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+  </div>
+{% endblock page_header %}

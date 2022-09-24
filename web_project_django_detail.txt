@@ -1,0 +1,118 @@
+1.Pycharmを開きます
+2.新規プロジェクトを作成：web_project
+
+3. Pycharmでターミナルを開き、次のコマンドを入力します。
+     仮想[Virtual]環境をアクティブ化->venv\Scripts\Activate
+　　　　　djangoフレームワークをインストールする->pip　install django
+　　　　　djangoプロジェクトを作成します->django-admin　startproject　web_test_project .
+　　　　　djangoプロジェクトが作成されたかどうかを確認します->dir
+　　　　　プロジェクトを現在の状態で表示->python　manage.py runserver
+
+Pycharmでターミナル(Terminal)を開き、次のコマンドを入力します。		
+	1. Create a sample app/サンプルアプリを作成すpythoる 
+	   -> python manage.py startapp polls
+	2. Confirm polls app is created (with files)
+	/ 投票アプリが作成されたことを確認します（ファイルを使用）
+	***pollsディレクトリが作成されます
+	-> dir
+	3. Open polls/views.py and edit / polls/views.pyを変更する: 
+	from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+	
+	４．Create a new python file polls/urls.py/
+	　pollsの中に新規Ｐｙｔｈｏｎファイルを作成するurls.pyの,内容は:
+	from django.urls import path
+
+    from . import views
+
+    urlpatterns = [
+        path('', views.index, name='index'),
+    ]
+	
+    5. web_test_projectのurls.pyをこの部分を変更する：
+	from django.urls import include, path
+	
+　　　　urlpatterns = [
+    　　　　path('polls/', include('polls.urls')),
+    　　　　path('admin/', admin.site.urls),
+　　　　]
+    6. Terminalで -> python　manage.py runserver
+    7. ブラウザにを入力して：http://127.0.0.1:8000/polls/
+	
+	
+		
+		 
+Ann Kelly > source venv/bin/activate
+
+1. Open Pycharm
+2. Create a new project: web_project
+
+3. Open Terminal in Pycharm and input the following commands:
+    Activate the virtual environment --> venv\Scripts\Activate 
+	Install django framework --> pip install django
+	Create a django project --> django-admin startproject web_test_project .
+	Check if the django project was created --> dir 
+	View the project in current state --> python manage.py runserver
+	
+		
+	Create a sample app  --> python manage.py startapp polls
+	********Confirm polls app is created (with files)**********
+	Open polls/views.py and edit --> 
+	from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+	
+	Create a new python file polls/urls.py
+	
+	from django.urls import path
+
+    from . import views
+
+    urlpatterns = [
+        path('', views.index, name='index'),
+    ]
+		 
+	 
+	
+	Reference:
+	
+	https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+	
+	django-admin startproject mysite
+	
+	These files are:
+
+The outer mysite/ root directory is a container for your project. Its name doesn’t matter to Django; you can rename it to anything you like.
+manage.py: A command-line utility that lets you interact with this Django project in various ways. You can read all the details about manage.py in django-admin and manage.py.
+The inner mysite/ directory is the actual Python package for your project. Its name is the Python package name you’ll need to use to import anything inside it (e.g. mysite.urls).
+mysite/__init__.py: An empty file that tells Python that this directory should be considered a Python package. If you’re a Python beginner, read more about packages in the official Python docs.
+mysite/settings.py: Settings/configuration for this Django project. Django settings will tell you all about how settings work.
+mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered site. You can read more about URLs in URL dispatcher.
+mysite/asgi.py: An entry-point for ASGI-compatible web servers to serve your project. See How to deploy with ASGI for more details.
+mysite/wsgi.py: An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.
+	
+これらのファイルは次のとおりです。
+
+外側のmysite/ルートディレクトリは、プロジェクトのコンテナです。その名前はDjangoには関係ありません。名前は好きな名前に変更できます。
+manage.py：このDjangoプロジェクトをさまざまな方法で操作できるコマンドラインユーティリティ。 django-adminとmanage.pyでmanage.pyに関するすべての詳細を読むことができます。
+内部のmysite/ディレクトリは、プロジェクトの実際のPythonパッケージです。その名前は、その中の何かをインポートするために使用する必要があるPythonパッケージ名です（例：mysite.urls）。
+mysite / __ init __。py：このディレクトリをPythonパッケージと見なす必要があることをPythonに通知する空のファイル。 Pythonの初心者の場合は、公式のPythonドキュメントでパッケージの詳細をお読みください。
+mysite / settings.py：このDjangoプロジェクトの設定/構成。 Djangoの設定は、設定がどのように機能するかをすべて教えてくれます。
+mysite / urls.py：このDjangoプロジェクトのURL宣言。 Djangoを利用したサイトの「目次」。 URLについて詳しくは、URLディスパッチャーをご覧ください。
+mysite / asgi.py：ASGI互換のWebサーバーがプロジェクトにサービスを提供するためのエントリポイント。詳細については、ASGIを使用して展開する方法を参照してください。
+mysite / wsgi.py：プロジェクトにサービスを提供するためのWSGI互換Webサーバーのエントリポイント。詳細については、「WSGIを使用して展開する方法」を参照してください。	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

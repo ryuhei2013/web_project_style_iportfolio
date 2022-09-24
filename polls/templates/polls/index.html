@@ -1,12 +1,47 @@
 {% extends "polls/base.html" %}
+{% load bootstrap5 %}
+{% load static %}
 
-{% block page_header %}
-  <div class="jumbotron">
-    <h1 class="display-3">PollsアプリのTopicsを入力表示と管理できます</h1>
+{% block content %}
+ {% bootstrap_css %}
+  <!--   Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <p class="lead">各ユーザのTopicのコメントを表示して、管理するウェッブアプリ</p>
-
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
-        role="button">Register &raquo;</a>
-  </div>
-{% endblock page_header %}
+<!--  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">-->
+<!--  &lt;!&ndash; Template Main CSS File &ndash;&gt;-->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
+ <br></br>
+ <section id="hero_" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Ana's Web App for Topic Management</h1>
+          <a data-aos="fade-up" data-aos-delay="400">User's can post topics and add comments in this Web Application</a>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+<!--                <a href="{% url 'users:register' %}" class="btn-get-started scrollto d-inline-flex-->
+<!--                align-items-center justify-content-center align-self-center" role="button">-->
+                <a href="{% url 'users:register' %}" class="getstarted scrollto">Register</a>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'assets/images/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+<!--  <div class="jumbotron">-->
+<!--          <h5 class="fs-4">Ana's Web App for Topic Management</h5>-->
+<!--          <p class="fs-6">User's can post topics and <br>add comments in this Web Application</p>-->
+<!--          <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>-->
+<!--      <img src="{% static 'assets/images/hero-img.png' %}" alt="My Image">-->
+<!--  </div>-->
+{% endblock content %}

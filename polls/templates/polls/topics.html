@@ -1,19 +1,60 @@
 {% extends "polls/base.html" %}
+{% load bootstrap5 %}
+{% load static %}
 
 {% block content %}
 
-  <p>Topics</p>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <ul>
-    {% for topic in topics %}
-      <li>
-        <a href="{% url 'polls:topic' topic.id %}">{{ topic }}</a>
-      </li>
-    {% empty %}
-      <li>No topics have been added yet.</li>
-    {% endfor %}
-  </ul>
+<!--  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">-->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+<!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
 
-  <a href="{% url 'polls:new_topic' %}">Add a new topic</a>
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <br></br><h2>Topics</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-9">
+            <p>List of Topics</p>
+            <ul>
+              {% for topic in topics %}
+              <li><i class="ri-check-double-line"></i><a href="{% url 'polls:topic' topic.id %}">{{ topic }}</a></li>
+              {% empty %}
+              <li>No topics have been added yet.</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p></p>
+            <a href="{% url 'polls:new_topic' %}" class="btn-learn-more">Add New Topic</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+<!--  <ul>-->
+<!--    {% for topic in topics %}-->
+<!--      <li>-->
+<!--        <a href="{% url 'polls:topic' topic.id %}">{{ topic }}</a>-->
+<!--      </li>-->
+<!--    {% empty %}-->
+<!--      <li>No topics have been added yet.</li>-->
+<!--    {% endfor %}-->
+<!--  </ul>-->
+
+<!--  <a href="{% url 'polls:new_topic' %}">Add a new topic</a>-->
 
 {% endblock content %}

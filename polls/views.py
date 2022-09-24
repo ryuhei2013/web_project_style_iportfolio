@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import Http404
+from django.views.generic import TemplateView
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
@@ -14,8 +15,8 @@ def index(request):
 @login_required
 def topics(request):
     """Show all topics."""
-    topics = Topic.objects.order_by('date_added')
-    context = {'topics': topics}
+    topics_list = Topic.objects.order_by('date_added')
+    context = {'topics': topics_list}
     return render(request, 'polls/topics.html', context)
 
 
@@ -51,7 +52,7 @@ def new_entry(request, topic_id):
     """Add a new entry for a particular topic."""
     entry_topic = Topic.objects.get(id=topic_id)
     entry_user = request.user
-    
+
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = EntryForm()
@@ -91,3 +92,7 @@ def edit_entry(request, entry_id):
 
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'polls/edit_entry.html', context)
+
+
+class HomeView(TemplateView):
+    template_name = 'index.html'

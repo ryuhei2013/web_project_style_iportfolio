@@ -3,11 +3,14 @@
 from django.urls import path
 
 from . import views
+from .views import HomeView
 
 app_name = 'polls'
 urlpatterns = [
     # Home page
     path('', views.index, name='index'),
+    path('index', views.index, name='index'),
+    # path('', HomeView.as_view(), name='home'),
     # Page that shows all topics.
     path('topics/', views.topics, name='topics'),
     # Detail page for a single topic.

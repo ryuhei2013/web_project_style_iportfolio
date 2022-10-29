@@ -5,72 +5,73 @@
 {% block content %}
 
   <!-- Vendor CSS Files -->
-<!--  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">-->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-<!--  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">-->
-<!--  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">-->
-<!--  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">-->
-<!--  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">-->
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
 <!--  Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <br></br>
+    <section id="about" class="about">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-        </div>
-
         <div class="row">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">-->
+          <div class="col-lg-4 col-md-6" >
             <div class="contact-about">
               <h3>Login</h3>
               <p>Input Your Login Information</p>
             </div>
           </div>
 
-          <div class="col-lg-7 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+<!--          <div class="col-lg-7 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">-->
+          <div class="col-lg-7 col-md-6 mt-4 mt-md-0" >
             <div class="info">
             {% if form.errors %}
               <p>Your username and password didn't match. Please try again."</p>
             {% endif %}
             <form action="{% url 'users:login' %}" method="post" role="form" class="php-email-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Username" required>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Password" required>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-
-                <div class="sent-message"></div>
-              </div>
-              <div class="text-center"><button type="submit">Login</button></div>
+              {% csrf_token %}
+              {{ form.as_p }}
+            <div class="row content">
+              <div class="col-lg-8 mx-auto"><button type="submit" class="btn-learn-more">Login</button></div>
+            </div>
+            <input type="hidden" name="next" value="{% url 'polls:index' %}" />
             </form>
             </div>
           </div>
-
-          <div class="col-lg-1 col-md-12" data-aos="fade-up" data-aos-delay="300">
-          </div>
-
         </div>
       </div>
     </section><!-- End Contact Section -->
 
-  {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
-    
-  <form method="post" action="{% url 'users:login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">Log in</button>
-    <input type="hidden" name="next" value="{% url 'polls:index' %}" />
-  </form>
+<!--  {% if form.errors %}-->
+<!--    <p>Your username and password didn't match. Please try again.</p>-->
+<!--  {% endif %}-->
+
+<!--  <form method="post" action="{% url 'users:login' %}">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <button name="submit">Log in</button>-->
+<!--    <input type="hidden" name="next" value="{% url 'polls:index' %}" />-->
+<!--  </form>-->
+
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<!--  <script src="static/assets/vendor/php-email-form/validate.js"></script>-->
+
+<!--   Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
 
 {% endblock content %}

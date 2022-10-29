@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-yl-o9+f35!0$_nx^e!4$qiw3!i5a(scvmy+*e=lmq41bz$b(te
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'users',
 
     'bootstrap5',
-    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,9 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Add these new lines
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 

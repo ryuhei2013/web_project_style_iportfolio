@@ -1,4 +1,4 @@
-{% extends "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
 
@@ -27,7 +27,7 @@
             <div class="row content"><div class="col-lg-3 mx-auto">
               <button name=submit class="btn-learn-more">Register</button>
             </div></div>
-          <input type="hidden" name="next" value="{% url 'polls:index' %}" />
+          <input type="hidden" name="next" value="{% url 'ryuhei:index' %}" />
         </form>
       </div>
     </section><!-- End About Us Section -->
@@ -37,7 +37,7 @@
 <!--    {{ form.as_p }}-->
 <!--        -->
 <!--    <button name="submit">Register</button>-->
-<!--    <input type="hidden" name="next" value="{% url 'polls:index' %}" />-->
+<!--    <input type="hidden" name="next" value="{% url 'ryuhei:index' %}" />-->
 <!--  </form>-->
 <!--    -->
   <!-- Vendor JS Files -->

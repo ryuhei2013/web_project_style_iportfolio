@@ -1,5 +1,5 @@
-{% extends "polls/base.html" %}
-{% include "polls/base.html" %}
+{% extends "/base.html" %}
+{% include "/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
 
@@ -30,9 +30,9 @@
           <div class="col-md-6 offset-md-3">
             <div class="icon-box active">
 <!--            <div class="icon-box active" data-aos="fade-up" data-aos-delay="100">-->
-              <div class="icon"><a href="{% url 'polls:new_entry' topic.id %}"><i class="bx bx-file"></i></a>
+              <div class="icon"><a href="{% url ':new_entry' topic.id %}"><i class="bx bx-file"></i></a>
             </div>
-              <h4 class="title"><a href="{% url 'polls:new_entry' topic.id %}">Add new entry</a></h4>
+              <h4 class="title"><a href="{% url ':new_entry' topic.id %}">Add new entry</a></h4>
             </div>
           </div>
           </div>
@@ -44,7 +44,7 @@
 <!--            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">              -->
               <div class="icon"><i class="bx bx-world"></i></div>
               {% if entry.owner.username == user.username %}
-              <h4 class="title"><a href="{% url 'polls:edit_entry' entry.id %}">{{ entry.date_added|date:'M d, Y H:i' }} BY {{ entry.owner }}</a></h4>
+              <h4 class="title"><a href="{% url 'ryuhei:edit_entry' entry.id %}">{{ entry.date_added|date:'M d, Y H:i' }} BY {{ entry.owner }}</a></h4>
               {% else %}
               <h4 class="title">{{ entry.date_added|date:'M d, Y H:i' }} BY {{ entry.owner }}</h4>
               {% endif %}
@@ -61,7 +61,7 @@
 
 <!--  <h3>{{ topic }}</h3>-->
 <!--  <p>-->
-<!--    <a href="{% url 'polls:new_entry' topic.id %}">Add new entry</a>-->
+<!--    <a href="{% url 'ryuhei:new_entry' topic.id %}">Add new entry</a>-->
 <!--  </p>-->
 
 <!--  <ul>-->
@@ -70,7 +70,7 @@
 <!--    <div class="card mb-3">-->
 <!--      <h4 class="card-header">-->
 <!--        {{ entry.date_added|date:'M d, Y H:i' }}-->
-<!--        <small><a href="{% url 'polls:edit_entry' entry.id %}">-->
+<!--        <small><a href="{% url 'ryuhei:edit_entry' entry.id %}">-->
 <!--            edit entry</a></small>-->
 <!--      </h4>-->
 <!--      <div class="card-body">-->

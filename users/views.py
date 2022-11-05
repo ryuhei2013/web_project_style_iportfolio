@@ -21,7 +21,7 @@ def register(request):
             # Log the user in and then redirect to home page.
             # ユーザーをログインして、ホームページにリダイレクトします。
             login(request, new_user)
-            return redirect('polls:index')
+            return redirect('ryuhei:index')
 
     # Display a blank or invalid form.
     # 空白または無効なフォームを表示します。

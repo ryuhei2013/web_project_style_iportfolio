@@ -19,7 +19,7 @@
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
 
 </head>
-<body>
+<body>0
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -41,9 +41,9 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{% url 'polls:index'%}"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'ryuhei:index'%}"><i class="bx bx-home"></i> <span>Home</span></a></li>
           {% if user.is_authenticated %}
-          <li><a class="nav-link scrollto" href="{% url 'polls:topics'%}"><i class="bx bx-file-blank"></i> <span>Topics</span></a></li>
+          <li><a class="nav-link scrollto" href="{% url 'ryuhei:topics'%}"><i class="bx bx-file-blank"></i> <span>Topics</span></a></li>
           <li><a class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Hello, {{ user.username }}</span></a></li>
           <li><a class="getstarted scrollto" href="{% url 'users:logout' %}"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
           {% else %}
@@ -73,13 +73,13 @@
 <!--  <header id="header" class="fixed-top d-flex align-items-center">-->
 <!--    <div class="container d-flex align-items-center justify-content-between">-->
 <!--      <div class="logo">-->
-<!--        <h1><a href="{% url 'polls:index'%}">Cloud Ana</a></h1>-->
+<!--        <h1><a href="{% url 'ryuhei:index'%}">Cloud Ana</a></h1>-->
 <!--      </div>-->
 <!--      <nav id="navbar" class="navbar">-->
 <!--        <ul>-->
-<!--          <li><a class="nav-link scrollto active" href="{% url 'polls:index'%}">Home</a></li>-->
+<!--          <li><a class="nav-link scrollto active" href="{% url 'ryuhei:index'%}">Home</a></li>-->
 <!--          {% if user.is_authenticated %}-->
-<!--          <li><a class="nav-link scrollto" href="{% url 'polls:topics'%}">Topics</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="{% url 'ryuhei:topics'%}">Topics</a></li>-->
 <!--          <li><a class="nav-link scrollto">Hello, {{ user.username }}</a></li>-->
 <!--          <li><a class="nav-link scrollto" href="#contact"></a></li>-->
 <!--          <li><a class="getstarted scrollto" href="{% url 'users:logout' %}">Logout</a></li>-->

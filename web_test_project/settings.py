@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     # My Personal Apps
-    'polls',
+    'ryuhei',
     'users',
 
     'bootstrap5',
@@ -63,7 +63,7 @@ ROOT_URLCONF = 'web_test_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'polls', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'ryuhei', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

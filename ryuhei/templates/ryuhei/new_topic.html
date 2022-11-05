@@ -1,10 +1,8 @@
-{% extends "polls/base.html" %}
-{% include "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
-
 {% block content %}
-  <!--   Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
@@ -14,29 +12,37 @@
   <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-  <!-- Template Main CSS File -->
+<!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <br></br>
+  <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column j
-  ustify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>川阪隆平</h1>
-      <p> <span class="typed" data-typed-items="バスケットボールクラブに入っている一般社団法人です,wwwwww,いまから暗号おくります,1001001000101010101010101001010101010101010101111001000010111011100100010100101010,正解はどうもありがとうございました。でした,く.....り.......か...え...し..."></span></p>
-    </div>
-  </section><!-- End Hero -->
+        <div class="section-title">
+          <br></br><h2>Add a new topic</h2>
+        </div>
 
-<!--  <div class="jumbotron">-->
-<!--          <h5 class="fs-4">Ana's Web App for Topic Management</h5>-->
-<!--          <p class="fs-6">User's can post topics and <br>add comments in this Web Application</p>-->
-<!--          <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>-->
-<!--      <img src="{% static 'assets/img/hero-img.png' %}" alt="My Image">-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
+        <div class="row content">
+          <div class="col-sm-4 mx-auto" >
+              <form action="{% url 'ryuhei:new_topic' %}" method='post'>
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn-learn-more" name="submit">Add topic</button>
+              </form>
+          </div>
+        </div>
 
+      </div>
+    </section><!-- End About Us Section -->
 
+<!--  <p>Add a new topic:</p>-->
+    
+<!--  <form action="{% url 'ryuhei:new_topic' %}" method='post'>-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <button name="submit">Add topic</button>-->
+<!--  </form>-->
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>

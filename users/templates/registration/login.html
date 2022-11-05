@@ -1,4 +1,4 @@
-{% extends "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
 {% load bootstrap5 %}
 
 {% load static %}
@@ -42,7 +42,7 @@
             <div class="row content">
               <div class="col-lg-8 mx-auto"><button type="submit" class="btn-learn-more">Login</button></div>
             </div>
-            <input type="hidden" name="next" value="{% url 'polls:index' %}" />
+            <input type="hidden" name="next" value="{% url 'ryuhei:index' %}" />
             </form>
             </div>
           </div>
@@ -58,7 +58,7 @@
 <!--    {% csrf_token %}-->
 <!--    {{ form.as_p }}-->
 <!--    <button name="submit">Log in</button>-->
-<!--    <input type="hidden" name="next" value="{% url 'polls:index' %}" />-->
+<!--    <input type="hidden" name="next" value="{% url 'ryuhei:index' %}" />-->
 <!--  </form>-->
 
 

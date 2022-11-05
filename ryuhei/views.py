@@ -8,8 +8,8 @@ from .forms import TopicForm, EntryForm
 
 
 def index(request):
-    """The home page for Polls"""
-    return render(request, 'polls/index.html')
+    """The home page for ryuhei"""
+    return render(request, 'ryuhei/index.html')
 
 
 @login_required
@@ -17,7 +17,7 @@ def topics(request):
     """Show all topics."""
     topics_list = Topic.objects.order_by('date_added')
     context = {'topics': topics_list}
-    return render(request, 'polls/topics.html', context)
+    return render(request, 'ryuhei/topics.html', context)
 
 
 @login_required
@@ -26,7 +26,7 @@ def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
-    return render(request, 'polls/topic.html', context)
+    return render(request, 'ryuhei/topic.html', context)
 
 
 @login_required
@@ -40,11 +40,11 @@ def new_topic(request):
         form = TopicForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('polls:topics')
+            return redirect('ryuhei:topics')
 
     # Display a blank or invalid form.
     context = {'form': form}
-    return render(request, 'polls/new_topic.html', context)
+    return render(request, 'ryuhei/new_topic.html', context)
 
 
 @login_required
@@ -64,11 +64,11 @@ def new_entry(request, topic_id):
             new_entry_input.topic = entry_topic
             new_entry_input.owner = entry_user
             new_entry_input.save()
-            return redirect('polls:topic', topic_id=topic_id)
+            return redirect('ryuhei:topic', topic_id=topic_id)
 
     # Display a blank or invalid form.
     context = {'topic': entry_topic, 'form': form}
-    return render(request, 'polls/new_entry.html', context)
+    return render(request, 'ryuhei/new_entry.html', context)
 
 
 @login_required
@@ -88,10 +88,10 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('polls:topic', topic_id=topic.id)
+            return redirect('ryuhei:topic', topic_id=topic.id)
 
     context = {'entry': entry, 'topic': topic, 'form': form}
-    return render(request, 'polls/edit_entry.html', context)
+    return render(request, 'ryuhei/edit_entry.html', context)
 
 
 class HomeView(TemplateView):

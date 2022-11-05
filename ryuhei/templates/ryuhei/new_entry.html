@@ -1,4 +1,4 @@
-{% extends "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
 {% block content %}
@@ -25,7 +25,7 @@
 
         <div class="row content">
           <div class="col-sm-6 mx-auto" >
-              <form action="{% url 'polls:new_entry' topic.id %}" method='post'>
+              <form action="{% url 'ryuhei:new_entry' topic.id %}" method='post'>
               {% csrf_token %}
               {{ form.as_p }}
               <button class="btn-learn-more" name="submit">Add Entry</button>
@@ -36,10 +36,10 @@
       </div>
     </section><!-- End About Us Section -->
 
-<!--  <p><a href="{% url 'polls:topic' topic.id %}">{{ topic }}</a></p>-->
+<!--  <p><a href="{% url 'ryuhei:topic' topic.id %}">{{ topic }}</a></p>-->
 <!--    <br></br>-->
 <!--  <p>Add a new entry:</p>-->
-<!--  <form action="{% url 'polls:new_entry' topic.id %}" method='post'>-->
+<!--  <form action="{% url 'ryuhei:new_entry' topic.id %}" method='post'>-->
 <!--    {% csrf_token %}-->
 <!--    {{ form.as_p }}-->
 <!--    <button name='submit'>Add entry</button>-->

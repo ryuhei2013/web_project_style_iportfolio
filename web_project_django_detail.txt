@@ -10,19 +10,19 @@
 
 Pycharmでターミナル(Terminal)を開き、次のコマンドを入力します。		
 	1. Create a sample app/サンプルアプリを作成すpythoる 
-	   -> python manage.py startapp polls
-	2. Confirm polls app is created (with files)
+	   -> python manage.py startapp ryuhei
+	2. Confirm ryuhei app is created (with files)
 	/ 投票アプリが作成されたことを確認します（ファイルを使用）
-	***pollsディレクトリが作成されます
+	***ryuheiディレクトリが作成されます
 	-> dir
-	3. Open polls/views.py and edit / polls/views.pyを変更する: 
+	3. Open ryuhei/views.py and edit / ryuhei/views.pyを変更する:
 	from django.http import HttpResponse
 
     def index(request):
-        return HttpResponse("Hello, world. You're at the polls index.")
+        return HttpResponse("Hello, world. You're at the ryuhei index.")
 	
-	４．Create a new python file polls/urls.py/
-	　pollsの中に新規Ｐｙｔｈｏｎファイルを作成するurls.pyの,内容は:
+	４．Create a new python file ryuhei/urls.py/
+	　ryuheiの中に新規Ｐｙｔｈｏｎファイルを作成するurls.pyの,内容は:
 	from django.urls import path
 
     from . import views
@@ -35,11 +35,11 @@ Pycharmでターミナル(Terminal)を開き、次のコマンドを入力しま
 	from django.urls import include, path
 	
 　　　　urlpatterns = [
-    　　　　path('polls/', include('polls.urls')),
+    　　　　path('ryuhei/', include('ryuhei.urls')),
     　　　　path('admin/', admin.site.urls),
 　　　　]
     6. Terminalで -> python　manage.py runserver
-    7. ブラウザにを入力して：http://127.0.0.1:8000/polls/
+    7. ブラウザにを入力して：http://127.0.0.1:8000/ryuhei/
 	
 	
 		
@@ -57,15 +57,15 @@ Ann Kelly > source venv/bin/activate
 	View the project in current state --> python manage.py runserver
 	
 		
-	Create a sample app  --> python manage.py startapp polls
-	********Confirm polls app is created (with files)**********
-	Open polls/views.py and edit --> 
+	Create a sample app  --> python manage.py startapp ryuhei
+	********Confirm ryuhei app is created (with files)**********
+	Open ryuhei/views.py and edit -->
 	from django.http import HttpResponse
 
     def index(request):
-        return HttpResponse("Hello, world. You're at the polls index.")
+        return HttpResponse("Hello, world. You're at the ryuhei index.")
 	
-	Create a new python file polls/urls.py
+	Create a new python file ryuhei/urls.py
 	
 	from django.urls import path
 

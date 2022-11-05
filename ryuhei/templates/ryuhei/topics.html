@@ -1,7 +1,10 @@
-{% extends "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
+{% include "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
+
 {% block content %}
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -12,37 +15,52 @@
   <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-<!-- Template Main CSS File -->
+  <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet %}">
-  <br></br>
-  <!-- ======= About Us Section ======= -->
+
+    <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
 
         <div class="section-title">
-          <br></br><h2>Add a new topic</h2>
-        </div>
+          <h2>Topics</h2>
+         </div>
 
-        <div class="row content">
-          <div class="col-sm-4 mx-auto" >
-              <form action="{% url 'polls:new_topic' %}" method='post'>
-              {% csrf_token %}
-              {{ form.as_p }}
-              <button class="btn-learn-more" name="submit">Add topic</button>
-              </form>
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{% static 'assets/img/profile-img.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3><a href="{% url 'ryuhei:new_topic' %}" class="btn-learn-more">Add New Topic</a></h3>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                   {% for topic in topics %}
+                     <li><i class="bi bi-chevron-right"></i> <strong><a href="{% url 'ryuhei:topic' topic.id %}">{{ topic }}</a></strong></li>
+                   {% empty %}
+                     <li>No topics have been added yet.</li>
+                   {% endfor %}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section><!-- End About Section -->
 
-<!--  <p>Add a new topic:</p>-->
-    
-<!--  <form action="{% url 'polls:new_topic' %}" method='post'>-->
-<!--    {% csrf_token %}-->
-<!--    {{ form.as_p }}-->
-<!--    <button name="submit">Add topic</button>-->
-<!--  </form>-->
+<!--  <ul>-->
+<!--    {% for topic in topics %}-->
+<!--      <li>-->
+<!--        <a href="{% url 'ryuhei:topic' topic.id %}">{{ topic }}</a>-->
+<!--      </li>-->
+<!--    {% empty %}-->
+<!--      <li>No topics have been added yet.</li>-->
+<!--    {% endfor %}-->
+<!--  </ul>-->
+
+<!--  <a href="{% url 'ryuhei:new_topic' %}">Add a new topic</a>-->
+
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>

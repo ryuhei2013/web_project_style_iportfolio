@@ -5,7 +5,7 @@ from django.urls import path
 from . import views
 from .views import HomeView
 
-app_name = 'polls'
+app_name = 'ryuhei'
 urlpatterns = [
     # Home page
     path('', views.index, name='index'),

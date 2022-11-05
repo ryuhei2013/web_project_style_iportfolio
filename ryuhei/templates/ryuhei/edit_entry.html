@@ -1,4 +1,4 @@
-{% extends "polls/base.html" %}
+{% extends "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
 {% block content %}
@@ -20,13 +20,13 @@
       <div class="container">
 
         <div class="section-title">
-          <br></br><h2><a href="{% url 'polls:topic' topic.id %}">{{ topic }}</a></h2>
+          <br></br><h2><a href="{% url 'ryuhei:topic' topic.id %}">{{ topic }}</a></h2>
           <h4>Edit entry</h4>
         </div>
 
         <div class="row content">
           <div class="col-sm-6 mx-auto" >
-              <form action="{% url 'polls:edit_entry' entry.id %}" method='post'>
+              <form action="{% url 'ryuhei:edit_entry' entry.id %}" method='post'>
               {% csrf_token %}
               {{ form.as_p }}
               <button class="btn-learn-more" name="submit">Save changes</button>

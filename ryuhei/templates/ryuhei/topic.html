@@ -1,5 +1,5 @@
-{% extends "/base.html" %}
-{% include "/base.html" %}
+{% extends "ryuhei/base.html" %}
+{% include "ryuhei/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
 
@@ -30,9 +30,9 @@
           <div class="col-md-6 offset-md-3">
             <div class="icon-box active">
 <!--            <div class="icon-box active" data-aos="fade-up" data-aos-delay="100">-->
-              <div class="icon"><a href="{% url ':new_entry' topic.id %}"><i class="bx bx-file"></i></a>
+              <div class="icon"><a href="{% url 'ryuhei:new_entry' topic.id %}"><i class="bx bx-file"></i></a>
             </div>
-              <h4 class="title"><a href="{% url ':new_entry' topic.id %}">Add new entry</a></h4>
+              <h4 class="title"><a href="{% url 'ryuhei:new_entry' topic.id %}">Add new entry</a></h4>
             </div>
           </div>
           </div>

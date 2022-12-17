@@ -11,6 +11,11 @@ def index(request):
     """The home page for ryuhei"""
     return render(request, 'ryuhei/index.html')
 
+def about(request):
+    """The about page for ryuhei"""
+    return render(request, 'ryuhei/about.html')
+
+
 
 @login_required
 def topics(request):

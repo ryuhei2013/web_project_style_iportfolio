@@ -28,7 +28,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="{% static 'assets/img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+        <img src="{% static 'assets/img/AvatarMaker.png' %}" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">川阪隆平</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -41,15 +41,16 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{% url 'ryuhei:index'%}"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'ryuhei:index'%}"><i class="bx bx-home"></i> <span>ホーム</span></a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'ryuhei:about'%}"><i class="bx bx-home"></i> <span>プロフィール</span></a></li>
           {% if user.is_authenticated %}
-          <li><a class="nav-link scrollto" href="{% url 'ryuhei:topics'%}"><i class="bx bx-file-blank"></i> <span>Topics</span></a></li>
-          <li><a class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Hello, {{ user.username }}</span></a></li>
-          <li><a class="getstarted scrollto" href="{% url 'users:logout' %}"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
+          <li><a class="nav-link scrollto" href="{% url 'ryuhei:topics'%}"><i class="bx bx-file-blank"></i> <span>話題</span></a></li>
+          <li><a class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>こんにちは, {{ user.username }}</span></a></li>
+          <li><a class="getstarted scrollto" href="{% url 'users:logout' %}"><i class="bx bx-file-blank"></i> <span>ログアウト</span></a></li>
           {% else %}
           <li><a class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Topics</span></a></li>
-          <li><a class="getstarted scrollto" href="{% url 'users:register' %}"><i class="bx bx-envelope"></i> <span>Register</span></a></li>
-          <li><a class="getstarted scrollto" href="{% url 'users:login' %}"><i class="bx bx-envelope"></i> <span>Log in</span></a></li>
+          <li><a class="getstarted scrollto" href="{% url 'users:register' %}"><i class="bx bx-envelope"></i> <span>アカウント新規作成</span></a></li>
+          <li><a class="getstarted scrollto" href="{% url 'users:login' %}"><i class="bx bx-envelope"></i> <span>ログイン</span></a></li>
           {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
